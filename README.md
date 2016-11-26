@@ -1,1 +1,5 @@
-# periph
+# Periph
+
+### Setup
+
+### Examples
