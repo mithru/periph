@@ -14,14 +14,29 @@ Do NOT use this with an iPhone / iPad or any Apple device. I have not tested thi
 
 ### Setup
 
-***Read the above Caution/Avisory before doing this. Seriously. ***
+*Read the above Caution/Avisory before doing this. __Seriously.__ *
 
-___Arduino___
+**Arduino**
 
 TODO - insert circuit diagram here.
 
-___Webpage___
+**Webpage**
+
 All of the examples have to be run with https or locally within the device. I'll try to set up some https webpages soon for the examples to be easily accessible. 
 
 ### Examples
+1. **periphBasic** can be used to check if the js part works fine *without* the microcontroller. Just run the webpage, allow microphone access and whistle to see the change.
+
+2. **periphBlink** is like the Arduino's blink sketch. The arduino sends a signal to the phone every second that alternates the background of the canvas element between two shades of grey.
+
+3. **periphJoystick** gets x and y values from a [joystick module](http://www.sainsmart.com/sainsmart-joystick-module-free-10-cables-for-arduino.html) and animates a virtual joystick on screen.
+
+4. **periphSnake** build upon periphJoystick to work the the popular snake game. Code modified from [Dan Shiffman's Coding Rainbow](https://github.com/CodingRainbow).
+
+### References
+
+[Wolf Paulus' Slideshare presentation](http://www.slideshare.net/wolfpaulus/android-arduino-and-the-headphone-jack)
+[Chris Wilson's Pitch Detect](https://github.com/cwilso/PitchDetect)
+[Dan Shiffman's p5js Snake game](https://github.com/CodingRainbow/Rainbow-Code/tree/master/challenges/CC_03_Snake_game_p5.js)
+
 
