@@ -19,6 +19,7 @@ Do NOT use this with an iPhone / iPad or any Apple device. I have not tested thi
 Read the above Caution section before doing this... __Seriously.__
 
 **Arduino**
+
 Use the circuit as shown below. 
 
 You don't necessarily need the TRRS adapter from Sparkfun. Although, that makes it a lot easier. 
