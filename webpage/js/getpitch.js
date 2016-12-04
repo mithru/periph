@@ -2,12 +2,10 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 var audioContext = null;
 
-var input;
+var ac = -1;
 
 window.onload = function() {
   console.log('done loading'); // debugging
-
-  input = document.getElementById( "input" );
   audioContext = new AudioContext(); // setting up AudioContext
   MAX_SIZE = Math.max(4,Math.floor(audioContext.sampleRate/5000));	// TODO why 5k?
 
@@ -45,7 +43,7 @@ function gotStream(stream) {
     updatePitch();
 }
 
-function toggleLiveInput() { // redundant method
+function requestMicrophoneAccess() {
     getUserMedia(
     	{
             "audio": {
@@ -70,16 +68,12 @@ var buf = new Float32Array( buflen );
 function updatePitch( time ) {
 	var cycles = new Array;
 	analyser.getFloatTimeDomainData( buf );
-	var ac = autoCorrelate( buf, audioContext.sampleRate );
-  console.log(ac);
-
-  input.innerHTML = ac;
+  ac = autoCorrelate( buf, audioContext.sampleRate );
 
 	if (!window.requestAnimationFrame)
 		window.requestAnimationFrame = window.webkitRequestAnimationFrame;
 	rafID = window.requestAnimationFrame( updatePitch );
 }
-
 
 function autoCorrelate( buf, sampleRate ) {
 	var SIZE = buf.length;
@@ -136,6 +130,12 @@ function autoCorrelate( buf, sampleRate ) {
 //	var best_frequency = sampleRate/best_offset;
 }
 
+// returns correlated value
+function getPeriphValue(){
+  var returnVal = Math.floor(ac)
+  console.log("returing " + returnVal);
+  return returnVal;
+}
 
 
-toggleLiveInput();
+requestMicrophoneAccess();

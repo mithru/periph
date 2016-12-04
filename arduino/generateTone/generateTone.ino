@@ -2,9 +2,11 @@ String inString = "";
 
 void setup() {
   Serial.begin(9600);
+  Serial.print("Started");
 }
 
 void loop() {
+  Serial.print("looping");
   while (Serial.available() > 0) {
     int inChar = Serial.read();
     if (isDigit(inChar)) {
